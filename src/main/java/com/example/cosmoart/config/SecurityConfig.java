@@ -59,12 +59,12 @@ public class SecurityConfig {
                     .sessionManagement(session -> session
                             .sessionCreationPolicy(SessionCreationPolicy.STATELESS.STATELESS)
                     )
-                    .oauth2Login(oauth2 -> oauth2
-                            .userInfoEndpoint(userInfo -> userInfo
-                                    .userService(oAuth2UserService)
-                            )
-                            .successHandler(oAuth2SuccessHandler)
-                    )
+//                    .oauth2Login(oauth2 -> oauth2
+//                            .userInfoEndpoint(userInfo -> userInfo
+//                                    .userService(oAuth2UserService)
+//                            )
+//                            .successHandler(oAuth2SuccessHandler)
+//                    )
                     .authenticationProvider(authenticationProvider())
                     .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
             return http.build();
