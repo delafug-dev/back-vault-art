@@ -8,6 +8,6 @@ RUN mvn clean package -DskipTests
 # Package stage
 FROM eclipse-temurin:23-jdk
 RUN mkdir /app
-COPY --from=builder /build/target/tu-aplicacion.jar /app/service.jar
+COPY --from=builder /build/target/vault-art-0.0.1-SNAPSHOT.jar /app/service.jar
 WORKDIR /app
 CMD ["java","-jar","service.jar"]
